@@ -611,9 +611,9 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openContactForm()" class="glow bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                    <a href="mailto:rajvishwakarma2021@gmail.com" class="glow bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
                         <i class="fas fa-paper-plane mr-2"></i>Send Message
-                    </button>
+                    </a>
                     <a href="https://github.com/rajvish7295" target="_blank" class="border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300">
                         <i class="fab fa-github mr-2"></i>View GitHub
                     </a>
@@ -716,62 +716,6 @@
                 }, 100);
                 hasTyped = true;
             }
-        }
-    );
-     function openContactForm() {
-            document.getElementById('contactModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeContactForm() {
-            document.getElementById('contactModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('contactModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeContactForm();
-            }
-        });
-
-        // Handle form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('senderName').value;
-            const email = document.getElementById('senderEmail').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Create email content
-            const emailSubject = `Portfolio Contact: ${subject}`;
-            const emailBody = `Hi Rajkumar,
-
-You have received a new message from your portfolio website:
-
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-
----
-This message was sent from your portfolio contact form.`;
-
-            // Create mailto link
-            const mailtoLink = `mailto:rajvishwakarma2021@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Email client opened! Please send the email from your email application.');
-            
-            // Reset form and close modal
-            this.reset();
-            closeContactForm();
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'978309d5f1f33ae5',t:'MTc1NjcxMTU3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
