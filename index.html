@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajkumar Vishwakarma - Python Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-3d {
+            transform: perspective(1000px) rotateX(2deg);
+            transition: all 0.3s ease;
+        }
+        
+        .card-3d:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .skill-bar {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: inherit;
+            animation: fillBar 2s ease-out;
+        }
+        
+        @keyframes fillBar {
+            from { width: 0%; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #667eea;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #667eea; }
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: reveal 1s ease forwards;
+        }
+        
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">RV</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-blue-400">Home</a>
+                    <a href="#about" class="nav-link hover:text-blue-400">About</a>
+                    <a href="#experience" class="nav-link hover:text-blue-400">Experience</a>
+                    <a href="#projects" class="nav-link hover:text-blue-400">Projects</a>
+                    <a href="#skills" class="nav-link hover:text-blue-400">Skills</a>
+                    <a href="#contact" class="nav-link hover:text-blue-400">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+    <!-- White Circle with Image -->
+    <div class="floating absolute top-20 left-10 w-20 h-20 rounded-full overflow-hidden " >
+        
+    </div>
+
+    <!-- Blue Circle -->
+    <div class="floating absolute top-40 right-20 w-16 h-16 bg-blue-300 rounded-full" style="animation-delay: -2s;"></div>
+
+    <!-- Purple Circle -->
+    <div class="floating absolute bottom-20 left-1/4 w-12 h-12 bg-purple-300 rounded-full" style="animation-delay: -4s;"></div>
+</div>
+
+        <div class="text-center z-10 px-6">
+           <div class="mb-8">
+    <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1">
+        <div class="w-full h-full rounded-full overflow-hidden">
+            <img src="/profile.jpeg" alt="Profile" class="w-full h-full object-cover object-top">
+        </div>
+    </div>
+</div>
+
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    Rajkumar Vishwakarma
+                </span>
+            </h1>
+            
+            <div class="text-xl md:text-2xl mb-8 typewriter">
+                Web Developer | Python, PHP (Laravel), Django, WordPress & Shopify
+            </div>
+            
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+                Building innovative solutions with Python, AI, and web technologies. 
+                Passionate about creating impactful software that solves real-world problems.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="glow bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-envelope mr-2"></i>Get In Touch
+                </a>
+                <a href="https://github.com/rajvish7295" target="_blank" class="border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                    <i class="fab fa-github mr-2"></i>View GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="section-reveal">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">About Me</span>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="card-3d bg-gray-700 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6 text-blue-400">Professional Summary</h3>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Python Developer with hands-on experience in building live systems and AI-based chatbot solutions. 
+                            Skilled in backend development, UI enhancement, and system optimization with a strong grasp of 
+                            the full development lifecycle.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Quick learner with a focus on clean code and real-world problem-solving. Currently pursuing MCA 
+                            while gaining practical experience through internships and live projects.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="card-3d bg-gray-700 p-6 rounded-xl">
+                            <h4 class="text-xl font-semibold mb-4 text-purple-400">
+                                <i class="fas fa-graduation-cap mr-2"></i>Education
+                            </h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <p class="font-semibold">MCA - Shri Vaishnav Vidyapeeth</p>
+                                    <p class="text-gray-400">2023-2025 | GPA: 6.77</p>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">BCA - Barkatullah University</p>
+                                    <p class="text-gray-400">2020-2023 | 72%</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-3d bg-gray-700 p-6 rounded-xl">
+                            <h4 class="text-xl font-semibold mb-4 text-green-400">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Location & Contact
+                            </h4>
+                            <p class="text-gray-300">📍 Nanda Nagar, Indore</p>
+                            <p class="text-gray-300">📞 +91-9111328903</p>
+                            <p class="text-gray-300">✉️ rajvishwakarma2021@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="section-reveal">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Work Experience</span>
+                </h2>
+                
+                <div class="space-y-8">
+                    <!-- Current Role -->
+                     <div class="card-3d bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-8 rounded-2xl border border-blue-500/30">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+        <div>
+            <h3 class="text-2xl font-bold text-blue-400">Jr. Software Developer (Full Time)</h3>
+            <p class="text-xl text-purple-400">RECHARGE TRENDD SETTER</p>
+        </div>
+        <div class="text-right">
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Current</span>
+            <p class="text-gray-400 mt-1">August 2025 – Present</p>
+        </div>
+    </div>
+    <ul class="space-y-2 text-gray-300">
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+            Developing and maintaining scalable web applications and APIs using Python, Laravel, and MySQL
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+            Collaborating with senior developers to implement clean, efficient, and reusable code
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+            Working on frontend features and responsive UI/UX using JavaScript, HTML, and CSS
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+            Customizing and building WordPress websites with themes, plugins, and SEO optimization
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+            Shopify theme customization, Liquid template editing, and integrating e-commerce functionality
+        </li>
+    </ul>
+</div>
+
+
+                    <div class="card-3d bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-8 rounded-2xl border border-blue-500/30">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400">Software Developer Trainee</h3>
+                                <p class="text-xl text-purple-400">RECHARGE TRENDD SETTER</p>
+                            </div>
+                            <div class="text-right">
+                                <!-- <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Current</span> -->
+                                <p class="text-gray-400 mt-1">May 2025 - August 2025</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                                Worked on live recharge & utility platform, developing backend logic using Python and PHP
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                                Assisted in performance optimization, UI fixes, and handled real-time user issues on the live site
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                                Contributed to website UI/UX design, creating clean, responsive interfaces using HTML, CSS, and JavaScript
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Previous Role -->
+                    <div class="card-3d bg-gray-800 p-8 rounded-2xl border border-gray-700">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400">Python Developer Intern</h3>
+                                <p class="text-xl text-purple-400">CYBER INSTANT PRIVATE LIMITED</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-gray-400">Jan 2025 - May 2025</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-400 mr-3 mt-1"></i>
+                                Developed and implemented an advanced Chatbot solution using NLP technologies
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-400 mr-3 mt-1"></i>
+                                Contributed to delivering impactful solutions for clients at Cyber Instant Pvt. Ltd., Indore
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="section-reveal">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Featured Projects</span>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Voice Assistant Project -->
+                    <div class="project-card card-3d p-6 rounded-2xl">
+                        <div class="text-4xl mb-4 text-blue-400">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Voice Assistant</h3>
+                        <p class="text-gray-300 mb-4">
+                            Advanced voice assistant with speech recognition and NLP capabilities for understanding and responding to voice commands.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 px-2 py-1 rounded text-sm">Python</span>
+                            <span class="bg-green-600 px-2 py-1 rounded text-sm">NLP</span>
+                            <span class="bg-purple-600 px-2 py-1 rounded text-sm">Speech Recognition</span>
+                        </div>
+                        <a href="https://github.com/rajvish7295" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </a>
+                    </div>
+                    
+                    <!-- Chatbot Project -->
+                    <div class="project-card card-3d p-6 rounded-2xl">
+                        <div class="text-4xl mb-4 text-green-400">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI Chatbot Solution</h3>
+                        <p class="text-gray-300 mb-4">
+                            Enterprise-level chatbot with advanced NLP technologies for automated customer support and engagement.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 px-2 py-1 rounded text-sm">Python</span>
+                            <span class="bg-yellow-600 px-2 py-1 rounded text-sm">AI/ML</span>
+                            <span class="bg-red-600 px-2 py-1 rounded text-sm">REST APIs</span>
+                        </div>
+                        <a href="https://github.com/rajvish7295" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </a>
+                    </div>
+                    
+                    <!-- Recharge Platform -->
+                    <div class="project-card card-3d p-6 rounded-2xl">
+                        <div class="text-4xl mb-4 text-purple-400">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Recharge Platform</h3>
+                        <p class="text-gray-300 mb-4">
+                            Live recharge and utility platform with real-time processing, user management, and responsive design.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 px-2 py-1 rounded text-sm">Python</span>
+                            <span class="bg-indigo-600 px-2 py-1 rounded text-sm">PHP</span>
+                            <span class="bg-orange-600 px-2 py-1 rounded text-sm">MySQL</span>
+                        </div>
+                        <a href="https://github.com/rajvish7295" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold">
+                            <i class="fab fa-github mr-2"></i>View More Projects
+                        </a>
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="section-reveal">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Technical Skills</span>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Programming Languages -->
+                    <div class="card-3d bg-gray-800 p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-6 text-blue-400">
+                            <i class="fas fa-code mr-2"></i>Programming
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Python</span>
+                                    <span class="text-blue-400">75%</span>
+                                </div>
+                                <div class="skill-bar bg-gray-700 rounded-full h-2">
+                                    <div class="skill-progress rounded-full" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>PHP</span>
+                                    <span class="text-blue-400">65%</span>
+                                </div>
+                                <div class="skill-bar bg-gray-700 rounded-full h-2">
+                                    <div class="skill-progress rounded-full" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>JavaScript</span>
+                                    <span class="text-blue-400">60%</span>
+                                </div>
+                                <div class="skill-bar bg-gray-700 rounded-full h-2">
+                                    <div class="skill-progress rounded-full" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Frameworks & Tools -->
+                    <div class="card-3d bg-gray-800 p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-6 text-green-400">
+                            <i class="fas fa-tools mr-2"></i>Frameworks
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Django</span>
+                                    <span class="text-green-400">75%</span>
+                                </div>
+                                <div class="skill-bar bg-gray-700 rounded-full h-2">
+                                    <div class="skill-progress rounded-full" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Laravel</span>
+                                    <span class="text-green-400">70%</span>
+                                </div>
+                                <div class="skill-bar bg-gray-700 rounded-full h-2">
+                                    <div class="skill-progress rounded-full" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>REST APIs</span>
+                                    <span class="text-green-400">70%</span>
+                                </div>
+                                <div class="skill-bar bg-gray-700 rounded-full h-2">
+                                    <div class="skill-progress rounded-full" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Database & Others -->
+                    <div class="card-3d bg-gray-800 p-6 rounded-2xl">
+    <h3 class="text-xl font-bold mb-6 text-purple-400">
+        <i class="fas fa-database mr-2"></i>Database & Others
+    </h3>
+    <div class="space-y-4">
+        <div>
+            <div class="flex justify-between mb-2">
+                <span>MySQL</span>
+                <span class="text-purple-400">75%</span>
+            </div>
+            <div class="skill-bar bg-gray-700 rounded-full h-2">
+                <div class="skill-progress rounded-full" style="width: 75%;"></div>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-between mb-2">
+                <span>Git</span>
+                <span class="text-purple-400">75%</span>
+            </div>
+            <div class="skill-bar bg-gray-700 rounded-full h-2">
+                <div class="skill-progress rounded-full" style="width: 75%;"></div>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-between mb-2">
+                <span>HTML/CSS</span>
+                <span class="text-purple-400">80%</span>
+            </div>
+            <div class="skill-bar bg-gray-700 rounded-full h-2">
+                <div class="skill-progress rounded-full" style="width: 80%;"></div>
+            </div>
+        </div>
+        <!-- WordPress -->
+        <div>
+            <div class="flex justify-between mb-2">
+                <span>WordPress</span>
+                <span class="text-purple-400">85%</span>
+            </div>
+            <div class="skill-bar bg-gray-700 rounded-full h-2">
+                <div class="skill-progress rounded-full" style="width: 85%;"></div>
+            </div>
+        </div>
+        <!-- Shopify -->
+        <div>
+            <div class="flex justify-between mb-2">
+                <span>Shopify</span>
+                <span class="text-purple-400">75%</span>
+            </div>
+            <div class="skill-bar bg-gray-700 rounded-full h-2">
+                <div class="skill-progress rounded-full" style="width: 75%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                
+                <!-- Certifications -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-center mb-8 text-yellow-400">Certifications</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="card-3d bg-gray-800 p-6 rounded-xl text-center">
+                            <i class="fas fa-certificate text-3xl text-yellow-400 mb-3"></i>
+                            <h4 class="font-semibold">SQL and Relational Databases</h4>
+                        </div>
+                        <div class="card-3d bg-gray-800 p-6 rounded-xl text-center">
+                            <i class="fas fa-certificate text-3xl text-yellow-400 mb-3"></i>
+                            <h4 class="font-semibold">The Joy of Computing Using Python</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-reveal text-center">
+                <h2 class="text-4xl font-bold mb-8">
+                    <span class="text-white">Let's Work Together</span>
+                </h2>
+                <p class="text-xl mb-12 opacity-90">
+                    Ready to bring your ideas to life? Let's discuss your next project!
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="card-3d flex flex-col items-center bg-white/10 backdrop-blur-md p-6 rounded-2xl">
+                        <i class="fas fa-envelope text-3xl text-blue-300 mb-4"></i>
+                        <h3 class="font-semibold mb-2">Email</h3>
+                        <a href="mailto:rajvishwakarma2021@gmail.com" class="text-blue-300 hover:text-blue-200" >
+                        
+                            rajvishwakarma2021@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div class="card-3d bg-white/10 backdrop-blur-md p-6 rounded-2xl">
+                        <i class="fas fa-phone text-3xl text-green-300 mb-4"></i>
+                        <h3 class="font-semibold mb-2">Phone</h3>
+                        <a href="tel:+919111328903" class="text-green-300 hover:text-green-200">
+                            +91-9111328903
+                        </a>
+                    </div>
+                    
+                    <div class="card-3d bg-white/10 backdrop-blur-md p-6 rounded-2xl">
+                        <i class="fab fa-linkedin text-3xl text-blue-300 mb-4"></i>
+                        <h3 class="font-semibold mb-2">LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/rajkumar-vishwakarma-87a9b9264" target="_blank" class="text-blue-300 hover:text-blue-200">
+                            Connect with me
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:rajvishwakarma2021@gmail.com" class="glow bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </a>
+                    <a href="https://github.com/rajvish7295" target="_blank" class="border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i>View GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/rajvish7295" target="_blank" class="text-gray-400 hover:text-white text-2xl transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rajkumar-vishwakarma-87a9b9264" target="_blank" class="text-gray-400 hover:text-white text-2xl transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:rajvishwakarma2021@gmail.com" class="text-gray-400 hover:text-white text-2xl transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-gray-400">
+                © 2025 Rajkumar Vishwakarma. Built with passion and code. 🚀
+            </p>
+            <p class="text-gray-500 text-sm mt-2">
+                🏏 Cricket Enthusiast | 🎮 Gaming Lover | 💻 Code Creator
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to reveal sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('section-reveal');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'md:hidden bg-gray-900 border-t border-gray-800 px-6 py-4 space-y-2';
+        mobileMenu.innerHTML = `
+            <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
+            <a href="#about" class="block py-2 hover:text-blue-400">About</a>
+            <a href="#experience" class="block py-2 hover:text-blue-400">Experience</a>
+            <a href="#projects" class="block py-2 hover:text-blue-400">Projects</a>
+            <a href="#skills" class="block py-2 hover:text-blue-400">Skills</a>
+            <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
+        `;
+        mobileMenu.style.display = 'none';
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'none') {
+                mobileMenu.style.display = 'block';
+                mobileMenuBtn.parentNode.parentNode.appendChild(mobileMenu);
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+
+        // Add typing effect restart on scroll
+        let typingElement = document.querySelector('.typewriter');
+        let hasTyped = false;
+
+        window.addEventListener('scroll', () => {
+            const rect = typingElement.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !hasTyped) {
+                typingElement.style.animation = 'none';
+                setTimeout(() => {
+                    typingElement.style.animation = 'typing 3s steps(40, end), blink-caret 0.75s step-end infinite';
+                }, 100);
+                hasTyped = true;
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'978309d5f1f33ae5',t:'MTc1NjcxMTU3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
